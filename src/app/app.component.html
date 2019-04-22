@@ -1,22 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>Welcome to {{ title }}!</h1>
+  <h1 class="title">{{ title }}</h1>
+  <div id="container">
+    <div class="centerContainer">
+      <img
+        *ngFor="let beer of beers"
+        width="100"
+        height="400"
+        alt=""
+        src="{{ beers[0].image_url }}"
+      />
+    </div>
+    <ul>
+      <li *ngFor="let beer of beers" class="beerName">
+        {{ beers[0].name }}
+      </li>
+      <li *ngFor="let beer of beers">{{ beers[0].tagline }}</li>
+      <li *ngFor="let beer of beers">{{ beers[0].description }}</li>
+    </ul>
 
-  <img
-    *ngFor="let beer of beers"
-    width="200"
-    alt=""
-    src="{{ beers[0].image_url }}"
-  />
+    <button (click)="get_products()" class="button">Random Beer</button>
+  </div>
 </div>
-<button (click)="get_products()">Random Beer</button>
-
-<ul>
-  <li *ngFor="let beer of beers">
-    {{ beers[0].name }}
-  </li>
-  <li *ngFor="let beer of beers">{{ beers[0].tagline }}</li>
-  <li *ngFor="let beer of beers">{{ beers[0].description }}</li>
-</ul>
-
 <router-outlet></router-outlet>

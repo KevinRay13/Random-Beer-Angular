@@ -8,7 +8,7 @@ let endpoint = 'https://api.punkapi.com/v2/beers/random';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Random Beer';
   results = '';
   private beers = [];
   constructor(private http: HttpClient) {}
